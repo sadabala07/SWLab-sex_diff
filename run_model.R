@@ -26,19 +26,19 @@ sourceEntireFolder <- function(folderName, verbose=FALSE, showWarnings=TRUE) {
   return(invisible(NULL))
 }
 ## set directory of code
-sourceEntireFolder("/N/slate/thjaya/MRI/R/R", verbose=FALSE, showWarnings=TRUE)
+sourceEntireFolder("/N/u/sadabala/BigRed200/SWLab-sex_diff/R", verbose=FALSE, showWarnings=TRUE)
 # choose the folder that has all the R files we want to use
 #read data
-setwd("/N/slate/thjaya/MRI/Sex_differences/A4_code")
+setwd("/N/u/sadabala/BigRed200/SWLab-sex_diff")
 alltask <- c("rest")
-setwd("/N/slate/thjaya/MRI/Sex_differences/A4_code")
+setwd("/N/u/sadabala/BigRed200/SWLab-sex_diff")
 ## this is tau-PET information
-df<-read.csv("a4vars_fmripet_n394.csv") # reads data into a dataframe
+df<-read.csv("/N/u/sadabala/BigRed200/SWLab-sex_diff/a4vars_fmripet_n394.csv") # reads data into a dataframe
 ## includes all regional tau-PET information
 allbehav <- c("PACCRN", colnames(df)[19:30]) # vector of behavioral variables from dataframe
 task<-alltask[1]
 behaviour <-as.character(allbehav[b]) # b should be which column we want to look at.
-X<- readRDS(paste0("X.",task,".rds")) # loads data to a list
+X<- readRDS(paste0("/N/u/sadabala/BigRed200/SWLab-sex_diff/X.",task,".rds")) # loads data to a list
 Y<- df[df$sex==a,c("subj_id", allbehav)]# a = 1 or 2 representing sex,
 if(a==3){
   Y<- df[,c("subj_id", allbehav)]# a = 1 or 2 representing sex,
@@ -96,14 +96,14 @@ res=list("model"=model1, "X_full"=X_full, "sampled.id"=sampled.id,"Y_full"=Y_ful
 #saveRDS(res, out_model)
 # Define the output model path
 out_model <- file.path(
-  "/N/slate/thjaya/MRI/Sex_differences/A4_code",
+  "/N/u/sadabala/BigRed200/SWLab-sex_diff",
   paste0("job_", job_id),
   behaviour,
   paste0("sex=2,feature=", behaviour, "1.rds")
 )
 # Ensure the directory exists
 dir.create(
-  file.path("/N/slate/thjaya/MRI/Sex_differences/A4_code", paste0("job_", job_id), behaviour),
+  file.path("/N/u/sadabala/BigRed200/SWLab-sex_diff", paste0("job_", job_id), behaviour),
   showWarnings = FALSE,
   recursive = TRUE
 )
