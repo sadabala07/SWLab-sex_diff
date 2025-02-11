@@ -12,6 +12,6 @@
 #SBATCH --mem=8G                  # Memory request
 #SBATCH -A r01010                 # Slurm account name (replace with yours)
 
-module load R/4.2.0          
+module load R/4.4.1         
 
-Rscript /N/u/sadabala/BigRed200/SWLab-sex_diff/your_script.R
+Rscript run_model.R
