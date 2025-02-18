@@ -7,10 +7,10 @@ b<-1
 # c<-as.numeric(args[3])
 # this code runs completely-yay!
 library(abind)
+library(coda)
 library(MASS)
 library(magic)
 #library(psych)
-library(coda)
 sourceEntireFolder <- function(folderName, verbose=FALSE, showWarnings=TRUE) {
   files <- list.files(folderName, full.names=TRUE)
   # Grab only R files
@@ -38,7 +38,7 @@ df<-read.csv("/N/u/sadabala/BigRed200/SWLab-sex_diff/a4vars_fmripet_n394.csv") #
 allbehav <- c("PACCRN", colnames(df)[19:30]) # vector of behavioral variables from dataframe
 task<-alltask[1]
 behaviour <-as.character(allbehav[b]) # b should be which column we want to look at.
-X<- readRDS(paste0("/N/u/sadabala/BigRed200/SWLab-sex_diff/X.",task,".rds")) # loads data to a list
+X<- readRDS(paste0("x.",task,".rds")) # loads data to a list
 Y<- df[df$sex==a,c("subj_id", allbehav)]# a = 1 or 2 representing sex,
 if(a==3){
   Y<- df[,c("subj_id", allbehav)]# a = 1 or 2 representing sex,
