@@ -1,7 +1,8 @@
 #!/bin/bash
+
 #SBATCH --job-name=SexDiffModel     # Job name
-#SBATCH --output=/N/u/sadabala/BigRed200/Logs/SexDiffModel_%j.out  # Path for the standard output file
-#SBATCH --error=/N/u/sadabala/BigRed200/Logs/SexDiffModel_%j.err   # Path for the error file
+#SBATCH --output=/N/u/sadabala/BigRed200/SWLab-sex_diff/Logs/SexDiffModel_%j.out  # Path for the standard output file
+#SBATCH --error=/N/u/sadabala/BigRed200/SWLab-sex_diff/Logs/SexDiffModel_%j.err   # Path for the error file
 #SBATCH --mail-type=ALL               # Email notification for all states
 #SBATCH --mail-user=sadabala@iu.edu     # Email address for notifications
 #SBATCH -A r01010
