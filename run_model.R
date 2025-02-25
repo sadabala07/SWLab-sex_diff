@@ -83,7 +83,7 @@ Y[sampled.id,]=NA
 # run the model
 model1=latentSNA(X=X, Y=Y, W=NULL, H=NULL,
                  seed = 1, nscan = 1, burn = 1, odens = 1,
-                 prior=list(), job = job_id)
+                 prior=list())
 # save results
 res=list("model"=model1, "X_full"=X_full, "sampled.id"=sampled.id,"Y_full"=Y_full)
 #out_model = paste0(paste0("/N/slate/thjaya/MRI/Sex_differences/A4_code","/",behaviour, "/"), "sex=",1,",","feature=",behaviour,1,".rds") # changed c to 1
